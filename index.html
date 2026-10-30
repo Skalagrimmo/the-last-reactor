@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Last Reactor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style>
+  html, body { margin: 0; padding: 0; background: #07070d; height: 100%; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    width: 100vmin; height: 93.75vmin; /* 4:3 -> keep 256x240 aspect */
+    max-width: 1024px; max-height: 960px;
+    border: 1px solid #1c1c2c;
+    background: #07070d;
+  }
+  #hint { position: fixed; left: 4px; bottom: 2px; color: #2c2c40; font: 10px monospace; }
+</style>
+</head>
+<body>
+<canvas id="game" width="256" height="240"></canvas>
+<div id="hint">arrows / wasd move &middot; j attack &middot; k interact &middot; i satchel &middot; p pause</div>
+<script src="js/core.js"></script>
+<script src="js/assets.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/world.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/player.js"></script>
+<script src="js/save.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
