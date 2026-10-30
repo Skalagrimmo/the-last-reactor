@@ -1,0 +1,39 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*#
+
+# Node (not required, but harmless if someone lints locally)
+node_modules/
+npm-debug.log*
+package-lock.json
+package.json
+
+# Python static-server leftovers, if used
+__pycache__/
+*.pyc
+.venv/
+
+# Caches and temp files
+.cache/
+*.tmp
+*.log
+.tmp.*
+
+# Local secrets / env (none used by this game, but just in case)
+.env
+.env.*
+!.env.example
+
+# Never commit caches, keys, or anything secret
+*.pem
+*.key
+id_rsa*
