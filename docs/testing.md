@@ -76,6 +76,15 @@ PNG encoder (see docs/architecture.md). All 7 were validated: PNG signature,
 with the documented LEN/NLEN. Sizes: 61778, 61820, 61835, 61829, 61829,
 61841, 61775 bytes.
 
+The captures are deterministic (fixed seed, fixed frame `t = 120`), so
+`node tests/regen-screenshots.js` regenerates byte-identical files anywhere
+the same source runs. Because the publishing connector used to create this
+repository can only write UTF-8 text (binary uploads would be corrupted —
+verified during development), the PNGs are committed to GitHub by
+`.github/workflows/screenshots.yml`, which runs the same script on GitHub's
+own runners whenever code or tests change. Each committed PNG's git blob SHA
+was verified against the locally computed reference after generation.
+
 ## What is NOT tested (known limitations)
 
 - **No real browser was available to the author.** The game loop, keyboard

@@ -16,6 +16,9 @@ produced by `tests/capture-harness.js`, not game assets.
   anchors; enemy packs and contents seeded through the game's LCG.
 - **Screenshots** — `docs/screenshots/*.png` are encoded by the harness's
   own PNG encoder (indexed colour, stored deflate) from the game's own
-  renderer, at a fixed frame from a fixed seed.
+  renderer, at a fixed frame from a fixed seed. They are deterministic
+  output of `tests/regen-screenshots.js` and are committed by a GitHub
+  workflow that runs that script (the publishing connector writes UTF-8
+  text only; see docs/testing.md).
 
 No third-party assets, libraries, fonts, or audio are used or required.

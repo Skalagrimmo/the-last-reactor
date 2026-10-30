@@ -70,3 +70,17 @@ unverified.
   encoder, zero dependencies).
 - Documentation: README, design, architecture, testing report, asset
   provenance, changelog.
+
+### Publishing notes
+
+- The GitHub publishing connector available to this project can only write
+  **UTF-8 text**; a probe upload of a binary PNG came back corrupted
+  (every byte ≥ 0x80 re-encoded as UTF-8, +20 bytes on the title shot).
+  Byte-exact binary uploads are therefore impossible through that path.
+- Consequently the PNG screenshots are generated **on GitHub** by
+  `.github/workflows/screenshots.yml` using `tests/regen-screenshots.js`
+  (the same deterministic capture pipeline as the test suite) and committed
+  by the workflow. Their git blob SHAs were then verified against locally
+  computed references — byte-exact, on GitHub, confirmed.
+- One corrupted probe upload of `01-title.png` was superseded by the
+  workflow's correct regeneration of the same path.
